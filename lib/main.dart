@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mealapp/screens/categories_screen.dart';
+import 'package:mealapp/screens/meal_detail_screen.dart';
+import 'package:mealapp/screens/tabs_screen.dart';
 import 'screens/category_meal_screen.dart';
 
 void main() => runApp(MyApp());
@@ -21,9 +23,14 @@ class MyApp extends StatelessWidget {
         )
       ),
       title: 'DeliMeals',
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(),
       routes: {
+        '/':(ctx) => TabsScreen(),
         CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      onUnknownRoute: (settings){
+        return MaterialPageRoute(builder: (ctx) => CategoryMealScreen());
       },
     );
   }
