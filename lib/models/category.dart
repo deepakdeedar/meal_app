@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Category{
+class Category {
   final String id;
   final String title;
   final Color color;
@@ -8,6 +8,6 @@ class Category{
   const Category({
     @required this.id,
     @required this.title,
-    this.color=Colors.orange,
+    this.color = Colors.orange,
   });
 }
